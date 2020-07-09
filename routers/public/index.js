@@ -3,9 +3,8 @@ const express = require('express');
 
 
 const router = express.Router();
-router.get('/', (req, res, next) => {
-    res.send("public controller")
-});
+const authRouter = require('./auth');
+router.use('/auth', authRouter);
 
 
 module.exports = router;
